@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crumb & Co. — Handmade Bakes in Pune</title>
+<meta name="description" content="Apple tart, tiramisu and celebration cakes, baked fresh in Pune. Delivering across PCMC, Aundh and Kalyani Nagar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf5ec; --paper:#fffaf3; --ink:#2b1d14; --muted:#6f5a4a;
+    --crust:#c8792f; --berry:#8c2f39; --cocoa:#4a2c1f; --line:#ead9c3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"DM Sans",system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.1;letter-spacing:-.01em}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(251,245,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;text-decoration:none}
+  .logo span{color:var(--crust)}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav ul a{text-decoration:none;font-weight:500;color:var(--muted)}
+  nav ul a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--cocoa);color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;font-size:1rem;transition:transform .15s,background .15s}
+  .btn:hover{background:var(--berry);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:#fff}
+  @media(max-width:720px){nav ul{display:none}}
+
+  .hero{padding:72px 0 88px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--crust);font-weight:700;margin-bottom:18px}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:22px}
+  .hero h1 em{font-style:italic;color:var(--berry)}
+  .hero p{font-size:1.15rem;color:var(--muted);max-width:480px;margin-bottom:32px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .plate{position:relative;aspect-ratio:1;max-width:440px;margin:auto;width:100%}
+  .plate svg{width:100%;height:100%}
+  .badge{position:absolute;bottom:6%;left:-4%;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 10px 30px rgba(74,44,31,.12);font-size:.9rem}
+  .badge b{display:block;font-family:"Fraunces",serif;font-size:1.1rem}
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding:40px 0 60px}.badge{left:0}}
+
+  section{padding:88px 0}
+  .head{text-align:center;max-width:600px;margin:0 auto 52px}
+  .head h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:12px}
+  .head p{color:var(--muted)}
+  .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(74,44,31,.12)}
+  .card .art{height:200px;display:grid;place-items:center}
+  .card .art svg{height:150px}
+  .card .body{padding:24px}
+  .card h3{font-size:1.5rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.98rem;margin-bottom:16px}
+  .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--cream);border:1px solid var(--line);color:var(--muted)}
+  @media(max-width:860px){.menu{grid-template-columns:1fr}}
+
+  .promise{background:var(--cocoa);color:#f6eadb}
+  .promise .head p{color:#d9c2aa}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .pillar{border-top:1px solid rgba(246,234,219,.25);padding-top:22px}
+  .pillar .n{font-family:"Fraunces",serif;font-size:2.4rem;color:var(--crust)}
+  .pillar h3{font-size:1.3rem;margin:6px 0 8px}
+  .pillar p{color:#d9c2aa}
+  @media(max-width:860px){.pillars{grid-template-columns:1fr}}
+
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .area{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;gap:16px;align-items:flex-start}
+  .pin{flex:none;width:42px;height:42px;border-radius:12px;background:#f3e2cc;display:grid;place-items:center;color:var(--berry)}
+  .area h3{font-size:1.25rem;margin-bottom:4px}
+  .area p{color:var(--muted);font-size:.95rem}
+  @media(max-width:860px){.areas{grid-template-columns:1fr}}
+
+  .order{background:var(--paper);border-top:1px solid var(--line)}
+  .order .box{max-width:620px;margin:0 auto;background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:36px}
+  form{display:grid;gap:14px}
+  label{font-weight:700;font-size:.9rem;display:grid;gap:6px}
+  input,select,textarea{font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--crust);border-color:transparent}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.row{grid-template-columns:1fr}.order .box{padding:24px}}
+  .note{font-size:.85rem;color:var(--muted);text-align:center;margin-top:6px}
+
+  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:.9rem}
+  footer .logo{display:block;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">Crumb <span>&</span> Co.</a>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#promise">Our promise</a></li>
+      <li><a href="#areas">Delivery</a></li>
+    </ul>
+    <a class="btn" href="#order">Order now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Baked fresh in Pune</span>
+      <h1>Good butter, slow bakes, <em>honest</em> desserts.</h1>
+      <p>Flaky apple tarts, coffee‑soaked tiramisu and cakes worth celebrating — made in small batches and delivered across PCMC, Aundh and Kalyani Nagar.</p>
+      <div class="cta">
+        <a class="btn" href="#order">Place an order</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+    </div>
+    <div class="plate">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <circle cx="200" cy="200" r="180" fill="#f3e2cc"/>
+        <circle cx="200" cy="200" r="150" fill="#fffaf3" stroke="#ead9c3" stroke-width="3"/>
+        <circle cx="200" cy="200" r="118" fill="#c8792f"/>
+        <circle cx="200" cy="200" r="104" fill="#e9b46a"/>
+        <g fill="#f6d79a" stroke="#c8792f" stroke-width="2">
+          <path id="s" d="M200 200 L200 104 A96 96 0 0 1 248 117 Z"/>
+          <use href="#s" transform="rotate(30 200 200)"/><use href="#s" transform="rotate(60 200 200)"/>
+          <use href="#s" transform="rotate(90 200 200)"/><use href="#s" transform="rotate(120 200 200)"/>
+          <use href="#s" transform="rotate(150 200 200)"/><use href="#s" transform="rotate(180 200 200)"/>
+          <use href="#s" transform="rotate(210 200 200)"/><use href="#s" transform="rotate(240 200 200)"/>
+          <use href="#s" transform="rotate(270 200 200)"/><use href="#s" transform="rotate(300 200 200)"/>
+          <use href="#s" transform="rotate(330 200 200)"/>
+        </g>
+        <circle cx="200" cy="200" r="26" fill="#c8792f"/>
+        <circle cx="200" cy="200" r="14" fill="#8c2f39"/>
+      </svg>
+      <div class="badge"><b>Small batch</b>Baked every morning</div>
+    </div>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The menu</span>
+      <h2>Three things, done properly</h2>
+      <p>We keep the list short so every bake gets our full attention.</p>
+    </div>
+    <div class="menu">
+      <article class="card">
+        <div class="art" style="background:#f6e3c6">
+          <svg viewBox="0 0 160 160"><circle cx="80" cy="80" r="66" fill="#c8792f"/><circle cx="80" cy="80" r="56" fill="#f6d79a"/><g stroke="#c8792f" stroke-width="3" fill="none"><path d="M80 24v112M24 80h112M40 40l80 80M120 40l-80 80"/></g><circle cx="80" cy="80" r="10" fill="#8c2f39"/></svg>
+        </div>
+        <div class="body">
+          <h3>Apple Tart</h3>
+          <p>Thin‑sliced apples fanned over almond cream in a crisp butter crust, finished with an apricot glaze.</p>
+          <div class="tags"><span class="tag">Whole tart</span><span class="tag">Slices</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="art" style="background:#ecdccb">
+          <svg viewBox="0 0 160 160"><rect x="26" y="40" width="108" height="84" rx="10" fill="#fffaf3" stroke="#4a2c1f" stroke-width="3"/><rect x="30" y="56" width="100" height="14" fill="#a06a3f"/><rect x="30" y="70" width="100" height="16" fill="#fbf0dc"/><rect x="30" y="86" width="100" height="14" fill="#a06a3f"/><rect x="30" y="100" width="100" height="18" fill="#fbf0dc"/><rect x="30" y="44" width="100" height="12" fill="#4a2c1f"/></svg>
+        </div>
+        <div class="body">
+          <h3>Tiramisu</h3>
+          <p>Espresso‑soaked savoiardi layered with whipped mascarpone and a generous dusting of dark cocoa.</p>
+          <div class="tags"><span class="tag">Jars</span><span class="tag">Party trays</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="art" style="background:#f2d9d6">
+          <svg viewBox="0 0 160 160"><rect x="34" y="66" width="92" height="60" rx="6" fill="#4a2c1f"/><rect x="34" y="88" width="92" height="8" fill="#f3e2cc"/><path d="M34 70 q11 14 23 0 q11 14 23 0 q11 14 23 0 q11 14 23 0 V64 H34z" fill="#fffaf3"/><circle cx="58" cy="56" r="8" fill="#8c2f39"/><circle cx="80" cy="52" r="8" fill="#8c2f39"/><circle cx="102" cy="56" r="8" fill="#8c2f39"/><rect x="24" y="126" width="112" height="6" rx="3" fill="#c8792f"/></svg>
+        </div>
+        <div class="body">
+          <h3>Celebration Cakes</h3>
+          <p>Moist, not‑too‑sweet sponges for birthdays and anniversaries — tell us the occasion and we'll bake to it.</p>
+          <div class="tags"><span class="tag">Custom orders</span><span class="tag">Order ahead</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="promise" class="promise">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Our promise</span>
+      <h2>Quality you can taste</h2>
+      <p>No shortcuts between our oven and your table.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><div class="n">01</div><h3>Real ingredients</h3><p>Real butter, fresh fruit, proper mascarpone and good coffee — nothing pre‑mixed.</p></div>
+      <div class="pillar"><div class="n">02</div><h3>Baked to order</h3><p>Small batches baked fresh, so what reaches you hasn't been sitting in a display case.</p></div>
+      <div class="pillar"><div class="n">03</div><h3>Careful delivery</h3><p>Packed to travel and delivered within our neighbourhoods so desserts arrive the way they left.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Where we deliver</span>
+      <h2>Serving across Pune</h2>
+      <p>Fresh from our kitchen to your door in these neighbourhoods.</p>
+    </div>
+    <div class="areas">
+      <div class="area"><div class="pin"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div><div><h3>PCMC</h3><p>Pimpri, Chinchwad, Wakad, Pimple Saudagar and nearby.</p></div></div>
+      <div class="area"><div class="pin"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div><div><h3>Aundh</h3><p>Aundh, Baner and the surrounding stretch.</p></div></div>
+      <div class="area"><div class="pin"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div><div><h3>Kalyani Nagar</h3><p>Kalyani Nagar, Viman Nagar and Koregaon Park side.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="order">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Order</span>
+      <h2>Tell us what you're craving</h2>
+      <p>Fill this in and it opens WhatsApp with your order ready to send.</p>
+    </div>
+    <div class="box">
+      <form id="f">
+        <div class="row">
+          <label>Your name<input name="name" required></label>
+          <label>Area
+            <select name="area"><option>PCMC</option><option>Aundh</option><option>Kalyani Nagar</option></select>
+          </label>
+        </div>
+        <div class="row">
+          <label>What would you like?
+            <select name="item"><option>Apple Tart</option><option>Tiramisu</option><option>Celebration Cake</option><option>A mix</option></select>
+          </label>
+          <label>Needed on<input type="date" name="date"></label>
+        </div>
+        <label>Notes (size, message on cake, quantity)<textarea name="notes" rows="3"></textarea></label>
+        <button class="btn" type="submit">Send order on WhatsApp</button>
+        <p class="note">We confirm price and delivery time on chat.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">Crumb <span style="color:var(--crust)">&</span> Co.</span>
+    Handmade in Pune · Delivering to PCMC, Aundh & Kalyani Nagar · © <span id="y"></span>
+  </div>
+</footer>
+
+<script>
+  // Set your WhatsApp number here (country code, no + or spaces), e.g. "919876543210"
+  const WHATSAPP_NUMBER = "";
+  document.getElementById('y').textContent = new Date().getFullYear();
+  document.getElementById('f').addEventListener('submit', e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(e.target));
+    const msg = `Hi Crumb & Co.! I'd like to order:\n• ${d.item}\n• Area: ${d.area}\n• Date: ${d.date || 'flexible'}\n• Notes: ${d.notes || '-'}\n— ${d.name}`;
+    const base = WHATSAPP_NUMBER ? `https://wa.me/${WHATSAPP_NUMBER}` : 'https://wa.me/';
+    window.open(`${base}?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+</script>
+</body>
+</html>
